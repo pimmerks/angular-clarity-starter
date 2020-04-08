@@ -1,6 +1,6 @@
-# ClarityBootstrap
+# Clarity Bootstrap
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Project created with command: `ng new clarity-bootstrap --style scss --routing`
 
 ## Development server
 
