@@ -1,0 +1,23 @@
+<clr-header>
+  <div class="branding">
+    <a [routerLink]="['/home']" class="nav-link">
+      <clr-icon shape="vm-bug"></clr-icon>
+      <span class="title">clarity-bootstrap</span>
+    </a>
+  </div>
+  <div class="header-nav" [clr-nav-level]="1">
+    <a [routerLink]="['/home']" routerLinkActive="active" class="nav-link"><span class="nav-text">Home</span></a>
+    <a [routerLink]="['/other']" routerLinkActive="active" class="nav-link"><span class="nav-text">Other</span></a>
+  </div>
+  <div class="header-actions">
+    <a [routerLink]="['/auth/login']" routerLinkActive="active" class="nav-link" aria-label="login">
+      Login
+    </a>
+    <a [routerLink]="['/auth/register']" routerLinkActive="active" class="nav-link" aria-label="register">
+      Register
+    </a>
+    <a [routerLink]="['/settings']" routerLinkActive="active" class="nav-link nav-icon" aria-label="settings">
+      <clr-icon shape="cog"></clr-icon>
+    </a>
+  </div>
+</clr-header>
