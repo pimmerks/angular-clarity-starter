@@ -12,9 +12,9 @@ describe('JwtTokenService', () => {
   });
 
   const validAccessToken: IToken = {
-    refreshToken: '',
+    refreshToken: 'a',
     refreshTokenExpiresAt: Date.now(),
-    token: '',
+    token: 'a',
     tokenExpiresAt: Date.now(),
     tokenType: 'bearer'
   };
@@ -24,11 +24,13 @@ describe('JwtTokenService', () => {
   });
 
   it('should have no access token', () => {
+    localStorage.clear();
     expect(service).toBeTruthy();
     expect(service.getToken()).toBeNull();
   });
 
   it('can set and retrieve an access token', () => {
+    localStorage.clear();
     expect(service).toBeTruthy();
     expect(service.getToken()).toBeNull();
     const setResult = service.setAndValidateToken(validAccessToken);
@@ -38,6 +40,7 @@ describe('JwtTokenService', () => {
   });
 
   it('does not set an invalid access token', () => {
+    localStorage.clear();
     expect(service).toBeTruthy();
     expect(service.getToken()).toBeNull();
     expect(service.setAndValidateToken(null)).toBeFalse();
@@ -45,6 +48,7 @@ describe('JwtTokenService', () => {
   });
 
   it('can remove a access token', () => {
+    localStorage.clear();
     expect(service).toBeTruthy();
     expect(service.getToken()).toBeNull();
 
@@ -56,6 +60,7 @@ describe('JwtTokenService', () => {
   });
 
   it('has an observable that we can subscribe to', () => {
+    localStorage.clear();
     expect(service).toBeTruthy();
     expect(service.getToken()).toBeNull();
 

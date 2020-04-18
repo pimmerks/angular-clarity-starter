@@ -1,20 +1,18 @@
-<clr-header>
-  <div class="branding">
-    <a [routerLink]="['/home']" class="nav-link">
-      <clr-icon shape="vm-bug"></clr-icon>
-      <span class="title">clarity-bootstrap</span>
-    </a>
-  </div>
-  <div class="header-nav" [clr-nav-level]="1">
-    <a [routerLink]="['/home']" routerLinkActive="active" class="nav-link"><span class="nav-text">Home</span></a>
-  </div>
+<div class="branding">
+  <a [routerLink]="['/home']" class="nav-link">
+    <clr-icon shape="vm-bug"></clr-icon>
+    <span class="title">clarity-bootstrap</span>
+  </a>
+</div>
+<div class="header-nav" [clr-nav-level]="1">
+  <a [routerLink]="['/home']" routerLinkActive="active" class="nav-link"><span class="nav-text">Home</span></a>
+</div>
 
-  <div class="header-actions">
-    <a [routerLink]="['/auth/login']" routerLinkActive="active" class="nav-link" aria-label="login">
-      Login
-    </a>
-    <a [routerLink]="['/auth/register']" routerLinkActive="active" class="nav-link" aria-label="register">
-      Register
-    </a>
-  </div>
-</clr-header>
+<div class="header-actions">
+  <a [routerLink]="['/auth/login']" routerLinkActive="active" class="nav-link" aria-label="login">
+    Login
+  </a>
+  <a [routerLink]="['/auth/register']" routerLinkActive="active" class="nav-link" aria-label="register">
+    Register
+  </a>
+</div>

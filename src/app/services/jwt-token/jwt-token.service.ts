@@ -32,7 +32,15 @@ export class JwtTokenService {
   }
 
   public verifyToken(token: IToken): boolean {
-    return true; // TODO
+    if (!token) {
+      return false;
+    }
+
+    if (!token.token) {
+      return false;
+    }
+
+    return true; // TODO: Verify JWT token.
   }
 
   public removeToken() {
