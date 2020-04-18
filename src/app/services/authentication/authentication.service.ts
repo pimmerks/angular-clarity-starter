@@ -12,9 +12,14 @@ export class AuthenticationService {
   constructor(
     private readonly tokenService: JwtTokenService,
     private readonly http: BaseClientService,
-  ) { }
+  ) {
+  }
 
   private authSubject: BehaviorSubject<boolean>;
+
+  public get isAuthenticated$() {
+    return this.authSubject.asObservable();
+  }
 
   public login(email: string, password: string): Observable<IToken> {
     return this.http.post<IToken>('auth/login', { email, password });

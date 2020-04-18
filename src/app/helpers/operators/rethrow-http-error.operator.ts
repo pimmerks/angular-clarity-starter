@@ -1,6 +1,6 @@
 import { MonoTypeOperatorFunction, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IError } from '@models/token.model';
+import { IError } from '@models/error.model';
 import { HttpErrorResponse } from '@angular/common/http';
 
 /**

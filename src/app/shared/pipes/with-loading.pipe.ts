@@ -14,7 +14,7 @@ import { map, startWith, catchError } from 'rxjs/operators';
   name: 'withLoading',
 })
 export class WithLoadingPipe implements PipeTransform {
-  transform(val) {
+  public transform(val) {
     return isObservable(val)
       ? val.pipe(
         map((value: any) => ({

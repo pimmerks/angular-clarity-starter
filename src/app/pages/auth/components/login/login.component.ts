@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '@services/authentication/authentication.service';
 import { map, flatMap } from 'rxjs/operators';
 import { from } from 'rxjs';
-import { IError } from '@models/token.model';
+import { IError } from '@models/error.model';
 
 @Component({
   templateUrl: './login.component.html'
@@ -28,7 +28,7 @@ export class LoginComponent {
 
   public error: IError = null;
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.loginForm.invalid) {
       return;
     }

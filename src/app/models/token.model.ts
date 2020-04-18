@@ -5,9 +5,3 @@ export interface IToken {
   refreshTokenExpiresAt: Date;
   tokenType: string;
 }
-
-export interface IError {
-  title: string;
-  message: string;
-  details: any;
-}

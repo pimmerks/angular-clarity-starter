@@ -4,7 +4,7 @@ import { AuthenticationService } from '@services/authentication/authentication.s
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ClrLoadingState } from '@clr/angular';
 import { map, flatMap } from 'rxjs/operators';
-import { IError } from '@models/token.model';
+import { IError } from '@models/error.model';
 import { from } from 'rxjs';
 
 @Component({
@@ -29,7 +29,7 @@ export class RegisterComponent {
 
   public error: IError = null;
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.registerForm.invalid) {
       return;
     }

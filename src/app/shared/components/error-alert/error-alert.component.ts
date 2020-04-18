@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IError } from '@models/token.model';
+import { IError } from '@models/error.model';
 
 @Component({
   selector: 'app-error-alert',
   templateUrl: './error-alert.component.html'
 })
 export class ErrorAlertComponent {
-  @Input() closable = false;
+  @Input() public closable = false;
 
-  @Input() set error(val: IError) {
+  @Input() public set error(val: IError) {
     this.errorInternal = val;
     if (!val){
       this.visible = false;
@@ -17,7 +17,7 @@ export class ErrorAlertComponent {
     }
   }
 
-  set alertClosed(val: boolean) {
+  public set alertClosed(val: boolean) {
     if (val) {
       this.error = null;
     }
