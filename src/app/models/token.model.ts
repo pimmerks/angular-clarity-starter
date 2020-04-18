@@ -1,7 +1,7 @@
 export interface IToken {
   token: string;
-  tokenExpiresAt: Date;
+  tokenExpiresAt: number;
   refreshToken: string;
-  refreshTokenExpiresAt: Date;
+  refreshTokenExpiresAt: number;
   tokenType: string;
 }

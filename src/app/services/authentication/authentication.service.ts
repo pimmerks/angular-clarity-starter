@@ -3,6 +3,7 @@ import { JwtTokenService } from '@services/jwt-token/jwt-token.service';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { BaseClientService } from '@services/base-client/base-client.service';
 import { IToken } from '@models/token.model';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,7 @@ export class AuthenticationService {
   constructor(
     private readonly tokenService: JwtTokenService,
     private readonly http: BaseClientService,
-  ) {
-  }
+  ) { }
 
   private authSubject: BehaviorSubject<boolean>;
 
@@ -21,11 +21,26 @@ export class AuthenticationService {
     return this.authSubject.asObservable();
   }
 
-  public login(email: string, password: string): Observable<IToken> {
-    return this.http.post<IToken>('auth/login', { email, password });
+  public login(email: string, password: string): Observable<boolean> {
+    return this.http.post<IToken>('auth/login', { email, password })
+    .pipe(
+      map(token => {
+        return this.tokenService.setAndValidateToken(token);
+      }),
+      tap(val => this.authSubject.next(val)));
   }
 
-  public register(email: string, name: string, password: string): Observable<IToken> {
-    return this.http.post<IToken>('auth/register', { email, password, name });
+  public register(email: string, name: string, password: string): Observable<boolean> {
+    return this.http.post<IToken>('auth/register', { email, password, name })
+    .pipe(
+      map(token => {
+        return this.tokenService.setAndValidateToken(token);
+      }),
+      tap(val => this.authSubject.next(val)));
+  }
+
+  public logout() {
+    this.tokenService.removeToken();
+    this.authSubject.next(false);
   }
 }
