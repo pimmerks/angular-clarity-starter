@@ -37,10 +37,10 @@ jobs:
       run: npm run lint
     
     - name: Build
-      run: npm run build:prod
+      run: npm run build:ci
 
     - name: Test
-      run: npm run ci:test
+      run: npm run test:ci
 
     - uses: actions/upload-artifact@v1
       with:
