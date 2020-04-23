@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '@services/authentication/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent {
 
-  constructor() { }
+  constructor(
+    public readonly authService: AuthenticationService
+  ) { }
+
+  public isAuthenticated$ = this.authService.isAuthenticated$;
 
 }
