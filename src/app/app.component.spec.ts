@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { SharedModule } from '@shared/shared.module';
 import { ClarityModule } from '@clr/angular';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -10,7 +11,8 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         SharedModule,
-        ClarityModule
+        ClarityModule,
+        HttpClientModule,
       ],
       declarations: [
         AppComponent
