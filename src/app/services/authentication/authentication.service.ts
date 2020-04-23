@@ -13,7 +13,9 @@ export class AuthenticationService {
   constructor(
     private readonly tokenService: JwtTokenService,
     private readonly http: BaseClientService,
-  ) { }
+  ) {
+    this.authSubject = new BehaviorSubject<boolean>(this.tokenService.hasValidToken());
+  }
 
   private authSubject: BehaviorSubject<boolean>;
 

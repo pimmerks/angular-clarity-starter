@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { IToken } from '@models/token.model';
 
 const JWT_STORAGE_KEY = 'token';
@@ -40,11 +40,15 @@ export class JwtTokenService {
       return false;
     }
 
-    return true; // TODO: Verify JWT token.
+    return true; // TODO: Verify the actual jwt token and not just check for nulls...
   }
 
   public removeToken() {
     this.removeTokenFromStorage();
+  }
+
+  public hasValidToken(): boolean {
+    return this.verifyToken(this.getTokenFromStorage());
   }
 
   private getTokenFromStorage(): IToken | null {
