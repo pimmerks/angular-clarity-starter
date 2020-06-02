@@ -3,7 +3,7 @@ import { JwtTokenService } from '@services/jwt-token/jwt-token.service';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { BaseClientService } from '@services/base-client/base-client.service';
 import { IToken } from '@models/token.model';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,10 @@ export class AuthenticationService {
 
   public get isAuthenticated$() {
     return this.authSubject.asObservable();
+  }
+
+  public get isAuthenticated() {
+    return this.authSubject.value;
   }
 
   public login(email: string, password: string): Observable<boolean> {
