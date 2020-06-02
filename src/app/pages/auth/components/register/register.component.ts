@@ -41,13 +41,12 @@ export class RegisterComponent {
       flatMap(_ => this.returnUrl$),
       flatMap(returnUrl => from(this.router.navigateByUrl(returnUrl))))
     .subscribe(token => {
-      this.registerBtnState = ClrLoadingState.SUCCESS;
-    },
-    (error: IError) => {
-      console.warn('error:', error);
-      this.error = error;
-      this.registerBtnState = ClrLoadingState.ERROR;
-    });
+        this.registerBtnState = ClrLoadingState.SUCCESS;
+      },
+      (error: IError) => {
+        console.warn('error:', error);
+        this.error = error;
+        this.registerBtnState = ClrLoadingState.ERROR;
+      });
   }
-
 }

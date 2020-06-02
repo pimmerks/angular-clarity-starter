@@ -40,13 +40,12 @@ export class LoginComponent {
       flatMap(_ => this.returnUrl$),
       flatMap(returnUrl => from(this.router.navigateByUrl(returnUrl))))
     .subscribe(token => {
-      this.loginBtnState = ClrLoadingState.SUCCESS;
-    },
-    (error: IError) => {
-      console.warn('error:', error);
-      this.error = error;
-      this.loginBtnState = ClrLoadingState.ERROR;
-    });
+        this.loginBtnState = ClrLoadingState.SUCCESS;
+      }, (error: IError) => {
+        console.warn('error:', error);
+        this.error = error;
+        this.loginBtnState = ClrLoadingState.ERROR;
+      });
   }
 
 }

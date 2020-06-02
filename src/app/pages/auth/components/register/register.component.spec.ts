@@ -5,6 +5,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ClarityModule } from '@clr/angular';
+import { SharedModule } from '@shared/shared.module';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
@@ -17,6 +18,7 @@ describe('RegisterComponent', () => {
         RouterTestingModule,
         HttpClientModule,
         ClarityModule,
+        SharedModule,
       ],
       declarations: [ RegisterComponent ]
     })
