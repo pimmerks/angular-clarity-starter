@@ -1,31 +1,33 @@
-<div class="card">
-  <div class="card-block">
+<app-center-card>
+  <div class="card">
+    <div class="card-block">
 
-    <h2>Register</h2>
+      <h2>Register</h2>
 
-    <app-error-alert [error]="error"></app-error-alert>
+      <app-error-alert [error]="error"></app-error-alert>
 
-    <form clrForm [formGroup]="registerForm" (ngSubmit)="onSubmit()" clrLayout="horizontal">
-      <clr-input-container>
-        <label>Email</label>
-        <input clrInput placeholder="john@doe.com" type="text" formControlName="email" autocomplete="username" />
-        <clr-control-error>Please provide an email address.</clr-control-error>
-      </clr-input-container>
+      <form clrForm [formGroup]="registerForm" (ngSubmit)="onSubmit()" clrLayout="horizontal">
+        <clr-input-container>
+          <label>Email</label>
+          <input clrInput placeholder="john@doe.com" type="text" formControlName="email" autocomplete="username" />
+          <clr-control-error>Please provide an email address.</clr-control-error>
+        </clr-input-container>
 
-      <clr-input-container>
-        <label>Name</label>
-        <input clrInput placeholder="John Doe" type="text" formControlName="name" autocomplete="name" />
-        <clr-control-error>Please provide a name.</clr-control-error>
-      </clr-input-container>
+        <clr-input-container>
+          <label>Name</label>
+          <input clrInput placeholder="John Doe" type="text" formControlName="name" autocomplete="name" />
+          <clr-control-error>Please provide a name.</clr-control-error>
+        </clr-input-container>
 
-      <clr-password-container>
-        <label>Password</label>
-        <input clrPassword placeholder="Password" formControlName="password" autocomplete="current-password" />
-        <clr-control-error>Please provide a password.</clr-control-error>
-      </clr-password-container>
-      <br />
-      <button [clrLoading]="registerBtnState" [disabled]="registerForm.invalid" class="btn btn-primary">register</button>
-    </form>
+        <clr-password-container>
+          <label>Password</label>
+          <input clrPassword placeholder="Password" formControlName="password" autocomplete="current-password" />
+          <clr-control-error>Please provide a password.</clr-control-error>
+        </clr-password-container>
+        <br />
+        <button [clrLoading]="registerBtnState" [disabled]="registerForm.invalid" class="btn btn-primary">register</button>
+      </form>
 
+    </div>
   </div>
-</div>
+</app-center-card>
