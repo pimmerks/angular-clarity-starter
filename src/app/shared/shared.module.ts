@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
 import { ClarityModule } from '@clr/angular';
 import { RouterModule } from '@angular/router';
 import { WithLoadingPipe } from './pipes/with-loading.pipe';
 import { ErrorAlertComponent } from './components/error-alert/error-alert.component';
+import { CenterCardComponent } from './components/center-card/center-card.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
     WithLoadingPipe,
     ErrorAlertComponent,
+    CenterCardComponent,
   ],
   imports: [
     CommonModule,
@@ -18,9 +18,9 @@ import { ErrorAlertComponent } from './components/error-alert/error-alert.compon
     RouterModule,
   ],
   exports: [
-    HeaderComponent,
     WithLoadingPipe,
     ErrorAlertComponent,
+    CenterCardComponent,
   ]
 })
 export class SharedModule { }
