@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ClarityModule } from '@clr/angular';
 import { RouterModule } from '@angular/router';
 import { WithLoadingPipe } from './pipes/with-loading.pipe';
-import { ErrorAlertComponent } from './components/error-alert/error-alert.component';
 import { CenterCardComponent } from './components/center-card/center-card.component';
 
 @NgModule({
   declarations: [
     WithLoadingPipe,
-    ErrorAlertComponent,
     CenterCardComponent,
   ],
   imports: [
@@ -19,7 +17,6 @@ import { CenterCardComponent } from './components/center-card/center-card.compon
   ],
   exports: [
     WithLoadingPipe,
-    ErrorAlertComponent,
     CenterCardComponent,
   ]
 })
